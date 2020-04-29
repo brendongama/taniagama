@@ -1,0 +1,11 @@
+drop database taniagama; excluir um banco
+
+create database taniagama; criar um banco
+
+\c taniagama entrar no banco
+
+\d ver as tabelas 
+
+\d (nome da tabela) ver atributos da tabela
+
+select *from tb_enciomenda;

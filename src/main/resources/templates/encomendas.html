@@ -1,0 +1,60 @@
+<DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Tania Gama</title>
+		
+		<!-- CSS BOOTSTRAP -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!-- HTML5 -->
+		<meta charset="utf-8"/>
+	</head>
+	
+	<body>
+		<header>
+			<nav class="navbar navbar-light bg-light">
+			  <a class="navbar-brand" style="font-weight: bold" href="#">Tânia Gama - Encomendas</a>
+			</nav>
+		</header>
+		
+		<section>
+			<div class="container" style="width: 60%; padding-bottom: 30px;">
+			 <a href="/newEncomenda" class="btn btn-primary" role="button" style="margin-top: 10px;">Cadastrar Encomenda</a>
+				<nav aria-label="breadcrumb">
+				  <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+				    <li class="breadcrumb-item active" aria-current="page">Encomendas</li>
+				  </ol>
+				</nav>
+				<div class="card shadow-sm bg-while rounded" style="margin-top: 20px;" th:each="encomenda : ${encomendas}">
+				  <div class="card-body">
+				  	<p class="card-subTitle mb-2 text-muted" style="font-size: 0.8rem;">
+				  		<b> Encomenda n° :</b> <span th:text="${encomenda.id}"></span>
+				  		<br/>
+				  		<b>Nome do cliente :</b> <span th:text="${encomenda.nomeCliente}"></span> 				  		
+				  		<br/>
+				  		<b>Tema :</b> <span th:text="${encomenda.tema}"></span>
+				  		<br/>
+				  		<b>Valor :</b> <span th:text="${encomenda.valor}"></span>
+				  		<br/>
+				  		<b>Data de entrega :</b> <span th:text="${encomenda.dataEntrega}"></span>
+				  		<br/>
+				  		<b>Horário de entrega :</b> <span th:text="${encomenda.horaEntrega}"></span>
+				  		<br/>
+				  		<b>Cliente fez o pedido no dia :</b> <span th:text="${encomenda.dataPedido}"></span>
+				  		<br/>
+				  		<b>Endereço :</b> <span th:text="${encomenda.endereco}"></span>
+				  		<br/>
+				  		<b>Telefone :</b> <span th:text="${encomenda.telefone}"></span>
+				  	</p>				  
+				  	<p class="card-text">
+				  		<span th:utext="${#strings.abbreviate(encomenda.descricaoEncomenda, 400)}"></span>
+				  	</p>
+				  </div>
+				</div>			
+			</div>
+		</section>		
+	</body>
+</html>
