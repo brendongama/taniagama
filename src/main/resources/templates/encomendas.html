@@ -39,11 +39,11 @@
 				  		<br/>
 				  		<b>Valor :</b> <span th:text="${encomenda.valor}"></span>
 				  		<br/>
-				  		<b>Data de entrega :</b> <span th:text="${encomenda.dataEntrega}"></span>
+				  		<b>Data de entrega :</b> <span th:text="${encomenda.dataEntrega}"></span>			
 				  		<br/>
-				  		<b>Horário de entrega :</b> <span th:text="${encomenda.horaEntrega}"></span>
+				  		<b>Horário de entrega :</b> <span th:text="${encomenda.horaEntrega}"></span>				  
 				  		<br/>
-				  		<b>Cliente fez o pedido no dia :</b> <span th:text="${encomenda.dataPedido}"></span>
+				  		<b>Cliente fez o pedido no dia :</b> <span th:text="${#temporals.format(encomenda.dataPedido, 'dd/MMM/yyyy')}"></span>				  															
 				  		<br/>
 				  		<b>Endereço :</b> <span th:text="${encomenda.endereco}"></span>
 				  		<br/>
